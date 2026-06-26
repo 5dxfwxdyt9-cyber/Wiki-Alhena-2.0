@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>SPÉCIFICITÉ PLAQUE — Alhena Auto Services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+        /* ===== ROOT & RESET ===== */
+        :root {
+            --lg-blue-900: #0B2C4D;
+            --lg-blue-700: #0E5FA8;
+            --lg-blue-600: #1689D6;
+            --lg-text: #102A43;
+            --lg-text-soft: #5B7088;
+            --lg-text-faint: #8CA0B8;
+            --lg-glass-strong: rgba(255, 255, 255, 0.82);
+            --lg-glass-border: rgba(255, 255, 255, 0.75);
+            --lg-hairline: rgba(11, 44, 77, 0.09);
+            --lg-shadow-soft: 0 8px 30px rgba(20, 60, 110, 0.08);
+            --lg-shadow-lift: 0 18px 40px -12px rgba(20, 60, 110, 0.18);
+            --lg-radius-xl: 28px;
+            --lg-radius-pill: 999px;
+
+            --region-paris: #1689D6;
+            --region-paris-soft: rgba(22, 137, 214, 0.14);
+            --region-bordeaux: #1FA86A;
+            --region-bordeaux-soft: rgba(31, 168, 106, 0.14);
+            --region-nca: #E84F8A;
+            --region-nca-soft: rgba(232, 79, 138, 0.14);
+            --region-lyon: #F0B429;
+            --region-lyon-soft: rgba(240, 180, 41, 0.16);
+            --region-marseille: #9C6ADE;
+            --region-marseille-soft: rgba(156, 106, 222, 0.14);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            background: #DCEBFB;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            color: var(--lg-text);
+            padding: 32px 24px;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            background:
+                radial-gradient(circle at 8% 8%, rgba(120, 180, 255, 0.45) 0%, rgba(120, 180, 255, 0) 42%),
+                radial-gradient(circle at 92% 4%, rgba(170, 210, 255, 0.5) 0%, rgba(170, 210, 255, 0) 38%),
+                radial-gradient(circle at 85% 92%, rgba(140, 195, 250, 0.4) 0%, rgba(140, 195, 250, 0) 45%),
+                radial-gradient(circle at 4% 90%, rgba(200, 225, 255, 0.45) 0%, rgba(200, 225, 255, 0) 40%),
+                linear-gradient(160deg, #EAF2FC 0%, #F4F8FD 50%, #E7F0FB 100%);
+            background-attachment: fixed;
+        }
+
+        /* ===== PAGE CONTAINER ===== */
+        .page-container {
+            max-width: 1320px;
+            margin: 0 auto;
+            background: var(--lg-glass-strong);
+            border-radius: 36px;
+            box-shadow: var(--lg-shadow-lift), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+            border: 1px solid var(--lg-glass-border);
+            backdrop-filter: blur(28px) saturate(160%);
+            -webkit-backdrop-filter: blur(28px) saturate(160%);
+            overflow: hidden;
+            position: relative;
+            padding: 0 120px;
+        }
+
+        /* ===== HEADER ===== */
+        .header-top {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            padding: 28px 0 14px 0;
+            text-align: center;
+        }
+
+        .alhena-title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: var(--lg-blue-900);
+            background: linear-gradient(135deg, var(--lg-blue-900) 0%, var(--lg-blue-600) 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .header-top h1 {
+            font-size: 1.8rem;
+            font-weight: 750;
+            letter-spacing: -0.4px;
+            background: linear-gradient(135deg, var(--lg-blue-900) 0%, var(--lg-blue-600) 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-top: 2px;
+        }
+
+        .header-top .subtitle {
+            font-size: 0.9rem;
+            color: var(--lg-text-soft);
+            font-weight: 500;
+            margin-top: 2px;
+        }
+
+        .header-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(22, 137, 214, 0.08);
+            border: 1px solid rgba(22, 137, 214, 0.2);
+            border-radius: var(--lg-radius-pill);
+            padding: 5px 16px;
+            font-size: 0.75rem;
+            font-weight: 650;
+            color: var(--lg-blue-700);
+            margin-top: 8px;
+        }
+
+        /* ===== TOOLBARS ===== */
+        .toolbar {
+            position: fixed;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 10;
+            width: auto;
+            top: 110px;
+        }
+
+        .toolbar-left {
+            left: 16px;
+            align-items: flex-start;
+        }
+
+        .toolbar-right {
+            right: 16px;
+            align-items: flex-end;
+        }
+
+        .tool-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 11px 24px;
+            border-radius: var(--lg-radius-pill);
+            background: linear-gradient(135deg, var(--lg-blue-700), var(--lg-blue-600));
+            box-shadow: 0 10px 28px rgba(14, 95, 168, 0.38), 0 3px 8px rgba(14, 95, 168, 0.22);
+            color: #ffffff;
+            font-size: 0.85rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            text-decoration: none;
+            white-space: nowrap;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .tool-btn i {
+            font-size: 1rem;
+            color: #ffffff;
+        }
+
+        .tool-btn:hover {
+            box-shadow: 0 14px 36px rgba(14, 95, 168, 0.5);
+            transform: scale(1.06);
+            color: #ffffff;
+            background: linear-gradient(135deg, var(--lg-blue-900), var(--lg-blue-700));
+        }
+
+        /* ===== MAP SECTION ===== */
+        .section-label {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--lg-blue-700);
+            margin: 18px 0 12px 0;
+            border-left: 4px solid var(--lg-blue-600);
+            padding-left: 12px;
+        }
+
+        .map-wrap {
+            display: flex;
+            justify-content: center;
+            margin: 4px 0 20px 0;
+        }
+
+        .map-card {
+            background: rgba(255, 255, 255, 0.55);
+            backdrop-filter: blur(14px);
+            border-radius: var(--lg-radius-xl);
+            border: 1px solid var(--lg-glass-border);
+            box-shadow: var(--lg-shadow-soft);
+            padding: 18px;
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .map-legend {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 6px;
+            margin-top: 12px;
+        }
+
+        .legend-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            border-radius: var(--lg-radius-pill);
+            padding: 3px 12px;
+            font-size: 0.68rem;
+            font-weight: 650;
+            cursor: default;
+        }
+
+        .legend-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            flex-shrink: 0;
+            display: inline-block;
+        }
+
+        .fr-zone {
+            cursor: pointer;
+            transition: opacity 0.15s, filter 0.15s;
+        }
+        .fr-zone:hover {
+            filter: brightness(1.08);
+        }
+        .fr-zone-base {
+            fill: rgba(11, 44, 77, 0.06);
+            stroke: rgba(11, 44, 77, 0.12);
+            stroke-width: 1.2;
+        }
+        .fr-dot {
+            stroke: white;
+            stroke-width: 2;
+        }
+        .fr-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            fill: var(--lg-blue-900);
+            text-anchor: middle;
+            pointer-events: none;
+        }
+        .fr-label-sub {
+            font-family: 'Inter', sans-serif;
+            font-size: 8.5px;
+            font-weight: 500;
+            fill: var(--lg-text-soft);
+            text-anchor: middle;
+            pointer-events: none;
+        }
+
+        /* ===== REGIONS GRID ===== */
+        .regions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+        }
+
+        .region-card {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(14px);
+            border-radius: var(--lg-radius-xl);
+            border: 1px solid var(--lg-glass-border);
+            box-shadow: var(--lg-shadow-soft);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .region-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--lg-shadow-lift);
+        }
+
+        .region-head {
+            padding: 14px 18px;
+            color: white;
+            font-weight: 750;
+            font-size: 0.95rem;
+            letter-spacing: -0.2px;
+        }
+
+        .region-body {
+            padding: 14px 18px 18px 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            flex: 1;
+        }
+
+        .region-row .row-label {
+            font-weight: 650;
+            color: var(--lg-text-soft);
+            font-size: 0.62rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            display: block;
+            margin-bottom: 1px;
+        }
+
+        .region-row .row-value {
+            font-weight: 600;
+            color: var(--lg-text);
+            font-size: 0.85rem;
+        }
+
+        .region-row .row-value.empty {
+            color: var(--lg-text-faint);
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        .region-access-btn {
+            margin-top: 6px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            border-radius: var(--lg-radius-pill);
+            padding: 8px 16px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: white;
+            cursor: pointer;
+            text-decoration: none;
+            transition: filter 0.15s, transform 0.15s;
+        }
+
+        .region-access-btn:hover {
+            filter: brightness(1.08);
+            transform: translateY(-1px);
+        }
+
+        .region-access-btn.disabled {
+            background: rgba(11, 44, 77, 0.07) !important;
+            color: var(--lg-text-faint);
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            border-top: 1px solid var(--lg-hairline);
+            padding: 14px 0;
+            text-align: center;
+            font-size: 0.7rem;
+            color: var(--lg-text-faint);
+            background: rgba(255, 255, 255, 0.4);
+            margin-top: 8px;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1500px) {
+            .page-container {
+                padding: 0 16px;
+            }
+            .toolbar {
+                position: static;
+                transform: none;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                width: 100%;
+                margin: 8px 0 4px 0;
+                gap: 8px;
+                align-items: center !important;
+                top: auto;
+            }
+            .toolbar-left,
+            .toolbar-right {
+                left: auto;
+                right: auto;
+            }
+            .tool-btn {
+                padding: 8px 16px;
+                font-size: 0.78rem;
+            }
+            .header-top {
+                padding: 20px 0 12px 0;
+            }
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 12px 8px;
+            }
+            .page-container {
+                padding: 0 10px;
+            }
+            .region-head {
+                font-size: 0.85rem;
+                padding: 12px 14px;
+            }
+            .region-body {
+                padding: 12px 14px;
+            }
+            .regions-grid {
+                grid-template-columns: 1fr;
+            }
+            .header-top h1 {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+
+        <!-- ===== HEADER ===== -->
+        <div class="header-top">
+            <div class="alhena-title">ALHENA</div>
+            <h1>SPÉCIFICITÉ PLAQUE</h1>
+            <div class="subtitle">Auto Services — Vue d'ensemble du réseau</div>
+            <div class="header-badge">5 plaques actives en France</div>
+        </div>
+
+        <!-- ===== TOOLBARS ===== -->
+        <div class="toolbar toolbar-left">
+            <a href="#" class="tool-btn" target="_blank"><i class="fas fa-network-wired"></i> Intranet</a>
+            <a href="https://my.cozact.com/login" class="tool-btn" target="_blank"><i class="fas fa-users-cog"></i> Cozact</a>
+            <a href="https://seine-rrg.mc2.renault.fr/logon/LogonPoint/index.html" class="tool-btn" target="_blank"><i class="fas fa-desktop"></i> Citrix</a>
+            <a href="https://app.ouilead.com/#/login" class="tool-btn" target="_blank"><i class="fas fa-chart-line"></i> Ouilead</a>
+            <a href="https://dcs.renault.com/icm3/jsp/ServletLogin?VIN=&amp;KM=" class="tool-btn" target="_blank"><i class="fas fa-car"></i> ICM</a>
+            <a href="#" class="tool-btn" target="_blank"><i class="fas fa-headset"></i> Calabrio</a>
+            <a href="https://renaultarca.my.site.com/NestSFA/s/login/?language=en_US&amp;ec=302&amp;startURL=%2FNestSFA%2Fs%2F%2520%2520%2F%2520https%3A%2Frenaultarca.my.site.com%2Fsfa%2F" class="tool-btn" target="_blank"><i class="fas fa-cloud"></i> Maeva</a>
+        </div>
+
+        <div class="toolbar toolbar-right">
+            <a href="https://teams.cloud.microsoft/?ocdiRedirect=index" class="tool-btn" target="_blank"><i class="fab fa-microsoft"></i> Teams</a>
+            <a href="https://outlook.cloud.microsoft/mail/" class="tool-btn" target="_blank"><i class="fas fa-envelope"></i> Outlook</a>
+            <a href="#" class="tool-btn" target="_blank"><i class="fas fa-sticky-note"></i> Notes</a>
+        </div>
+
+        <!-- ===== CONTENT ===== -->
+        <div class="content">
+
+            <!-- MAP -->
+            <div class="section-label">Couverture nationale</div>
+            <div class="map-wrap">
+                <div class="map-card">
+                    <svg viewBox="0 0 360 400" style="width:100%; height:auto; max-width:340px; display:block; margin:0 auto;">
+                        <path class="fr-zone-base" d="M 150 20
+                            L 190 18 L 215 35 L 235 30 L 260 45 L 250 65 L 270 80
+                            L 295 95 L 300 120 L 280 140 L 290 165 L 275 190
+                            L 285 215 L 265 245 L 270 270 L 250 295 L 230 310
+                            L 210 335 L 185 350 L 160 340 L 150 360 L 125 350
+                            L 110 325 L 90 310 L 70 290 L 55 265 L 60 235
+                            L 45 210 L 55 180 L 45 150 L 65 125 L 60 95
+                            L 85 75 L 95 50 L 120 40 L 130 25 Z"/>
+
+                        <!-- Paris -->
+                        <circle class="fr-zone" cx="172" cy="105" r="34" fill="var(--region-paris)" opacity="0.85" onclick="window.location.href='plaque-paris.html'" />
+                        <circle class="fr-dot" cx="172" cy="105" r="5" fill="#ffffff" />
+                        <text class="fr-label" x="172" y="148">PARIS</text>
+                        <text class="fr-label-sub" x="172" y="160">Hassen ZERROUKI</text>
+
+                        <!-- Lyon -->
+                        <circle class="fr-zone" cx="225" cy="200" r="30" fill="var(--region-lyon)" opacity="0.85" onclick="window.location.href='plaque-lyon.html'" />
+                        <circle class="fr-dot" cx="225" cy="200" r="5" fill="#ffffff" />
+                        <text class="fr-label" x="225" y="240" fill="#7a5c00">LYON</text>
+                        <text class="fr-label-sub" x="225" y="252">Maëva MARTINEZ</text>
+
+                        <!-- Bordeaux -->
+                        <circle class="fr-zone" cx="95" cy="220" r="30" fill="var(--region-bordeaux)" opacity="0.85" onclick="window.location.href='plaque-bordeaux.html'" />
+                        <circle class="fr-dot" cx="95" cy="220" r="5" fill="#ffffff" />
+                        <text class="fr-label" x="95" y="260">BORDEAUX</text>
+                        <text class="fr-label-sub" x="95" y="272">Florianne ROUGEON</text>
+
+                        <!-- NCA -->
+                        <circle class="fr-zone" cx="245" cy="290" r="28" fill="var(--region-nca)" opacity="0.85" onclick="window.location.href='plaque-nca.html'" />
+                        <circle class="fr-dot" cx="245" cy="290" r="5" fill="#ffffff" />
+                        <text class="fr-label" x="245" y="327">NCA</text>
+                        <text class="fr-label-sub" x="245" y="339">Amira BEN LARBI</text>
+
+                        <!-- Marseille -->
+                        <circle class="fr-zone" cx="105" cy="300" r="28" fill="var(--region-marseille)" opacity="0.85" onclick="window.location.href='plaque-marseille.html'" />
+                        <circle class="fr-dot" cx="105" cy="300" r="5" fill="#ffffff" />
+                        <text class="fr-label" x="105" y="337">MARSEILLE</text>
+                        <text class="fr-label-sub" x="105" y="349">Imen CHIKAOUI</text>
+                    </svg>
+
+                    <div class="map-legend">
+                        <span class="legend-pill" style="background:var(--region-paris-soft); color:var(--lg-blue-900);"><span class="legend-dot" style="background:var(--region-paris);"></span>Paris</span>
+                        <span class="legend-pill" style="background:var(--region-bordeaux-soft); color:#0f6b3d;"><span class="legend-dot" style="background:var(--region-bordeaux);"></span>Bordeaux</span>
+                        <span class="legend-pill" style="background:var(--region-nca-soft); color:#a8195f;"><span class="legend-dot" style="background:var(--region-nca);"></span>NCA</span>
+                        <span class="legend-pill" style="background:var(--region-lyon-soft); color:#8a6200;"><span class="legend-dot" style="background:var(--region-lyon);"></span>Lyon</span>
+                        <span class="legend-pill" style="background:var(--region-marseille-soft); color:#6b3fa0;"><span class="legend-dot" style="background:var(--region-marseille);"></span>Marseille</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- REGIONS GRID -->
+            <div class="section-label">Plaques &amp; managers</div>
+            <div class="regions-grid">
+
+                <!-- Paris -->
+                <div class="region-card">
+                    <div class="region-head" style="background:linear-gradient(135deg, var(--region-paris), #0E5FA8);">
+                        PARIS
+                    </div>
+                    <div class="region-body">
+                        <div class="region-row">
+                            <span class="row-label">Manager</span>
+                            <span class="row-value">Hassen ZERROUKI</span>
+                        </div>
+                        <div class="region-row">
+                            <span class="row-label">Téléphone</span>
+                            <span class="row-value empty">À renseigner</span>
+                        </div>
+                        <div class="region-row">
+                            <span class="row-label">Horaires</span>
+                            <span class="row-value empty">À renseigner</span>
+                        </div>
+                        <div class="region-row">
+                            <span class="row-label">Back up</span>
+                            <span class="row-value">Florianne ROUGEON</span>
+                        </div>
+                        <a href="plaque-paris.html" class="region-access-btn" style="background:linear-gradient(135deg, var(--region-paris), #0E5FA8); box-shadow:0 8px 18px -6px rgba(22,137,214,0.45);">
+                            Accéder
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Bordeaux -->
+                <div class="region-card">
+                    <div class="region-head" style="background:linear-gradient(135deg, var(--region-bordeaux), #0f6b3d);">
+                        BORDEAUX
+                    </div>
+                    <div class="region-body">
+                        <div class="region-row">
+                            <span class="row-label">Manager</span>
+                            <span class="row-value">Florianne ROUGEON</span>
+                        </div>
+                        <div class="region-row">
+                            <span class="row-label">Téléphone</span>
+                            <span class="row-value empty">À renseigner</span>
+                        </div>
+                        <div class="region-row">
+                            <span class="row-label">Horaires</span>
+                            <span class="row-value empty">À renseigner</span>
+                        </div>
+                        <div class="region-row">
+                            <span class="row-label">Back up</span>
+                            <span class="row-value">Hassen ZERROUKI</span>
+                        </div>
+                        <a href="plaque-bordeaux.html" class="region-access-btn" style="background:linear-gradient(135deg, var(--region-bordeaux), #0f6b3d); box-shadow:0 8px 18px -6px rgba(31,168,106,0.45);">
+                            Accéder
+                        </a>
+                    </div>
+                </div>
+
+                <!-- NCA -->
+                <div class="region-card">
+                    <div class="region-head" style="background:linear-gradient(135deg, var(--region-nca), #a8195f);">
+                        NCA
+                    </div>
+                    <div class="region-body">
+                        <div class="region-row">
+                            <span class="row-label">Manager</span>
+                            <span class="row-value">Amira BEN LARBI</span>
+                        </div>
+                        <div class="region-row">
+                            <span class="row-label">Téléphone</span>
+                            <span class="row-value empty">À renseigner</span>
+                        </div>
+                        <div class="region-row">
+                            <span class="row-label">Horaires</span>
+                            <span class="row-value empty">À renseigner</span>
+                        </div>
+                        <div class="region-row">
+                            <span class="row-label">Back up</span>
+                            <span class="row-value">Maëva MARTINEZ</span>
+                        </div>
+                        <a href="plaque-nca.html" class="region-access-btn" style="background:linear-gradient(135deg, var(--region-nca), #a8195f); box-shadow:0 8px 18px -6px rgba(232,79,138,0.45);">
+                            Accéder
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Lyon -->
+                <div class="region-card">
+                    <div class="region-head" style="background:linear-gradient(135deg, var(--region-lyon), #b9860a);">
+                        LYON
+                    </div>
+                    <div class="region-body">
+                        <div class="region-row">
+                            <span class="row-label">Manager</span>
+                            <span class="row-value">Maëva MARTINEZ</span>
+                        </div>
+                        <div class="region-row">
+                            <span class="row-label">Téléphone</span>
+                            <span class="row-value empty">À renseigner</span>
+                        </div>
+                        <div class="region-row">
+                            <span class="row-label">Horaires</span>
+                            <span class="row-value empty">À renseigner</span>
+                        </div>
+                        <div class="region-row">
+                            <span class="row-label">Back up</span>
+                            <span class="row-value">Amira BEN LARBI</span>
+                        </div>
+                        <a href="plaque-lyon.html" class="region-access-btn" style="background:linear-gradient(135deg, var(--region-lyon), #b9860a); box-shadow:0 8px 18px -6px rgba(240,180,41,0.45); color:#5c4400;">
+                            Accéder
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Marseille -->
+                <div class="region-card">
+                    <div class="region-head" style="background:linear-gradient(135deg, var(--region-marseille), #6b3fa0);">
+                        MARSEILLE
+                    </div>
+                    <div class="region-body">
+                        <div class="region-row">
+                            <span class="row-label">Manager</span>
+                            <span class="row-value">Imen CHIKAOUI</span>
+                        </div>
+                        <div class="region-row">
+                            <span class="row-label">Téléphone</span>
+                            <span class="row-value empty">À renseigner</span>
+                        </div>
+                        <div class="region-row">
+                            <span class="row-label">Horaires</span>
+                            <span class="row-value empty">À renseigner</span>
+                        </div>
+                        <div class="region-row">
+                            <span class="row-label">Back up</span>
+                            <span class="row-value">—</span>
+                        </div>
+                        <a href="plaque-marseille.html" class="region-access-btn" style="background:linear-gradient(135deg, var(--region-marseille), #6b3fa0); box-shadow:0 8px 18px -6px rgba(156,106,222,0.45);">
+                            Accéder
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <footer>
+            Alhena Auto Services · Spécificité Plaque · Réseau national
+        </footer>
+    </div>
+</body>
+</html>
